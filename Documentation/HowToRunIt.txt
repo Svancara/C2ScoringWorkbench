@@ -1,0 +1,20 @@
+1) Input from C2:
+- collective2.accountequity
+- collective2.totalComm
+( - collective2.dividends perhaps later)
+- collective2.systems for join LastLoggedIn
+- collective2.people for LastLoggedIn
+- collective2.systemmetastatslatest for selection by numtrades, drawdown - warning: Those are the latest stats!
+
+
+2) Prepare data in C# C2CleanDatabase 
+- Prepare collective2.accountequity (subtract commissions, add dividend)
+- Convert to DAILY data (using a calendar table - see C# code)
+- Store to DB
+
+3) Calculation in R
+- See CarltonScore.R
+
+Input: Daily equity
+Output: db carlton_performance_rolling_210days 
+ 
